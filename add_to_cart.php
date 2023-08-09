@@ -9,5 +9,5 @@ if (!isset($_SESSION['cart'])) {
 
 array_push($_SESSION['cart'], $product_id);
 
-header('Location: products.php');
+header('Location: index.php');
 ?>
