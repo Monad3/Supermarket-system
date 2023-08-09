@@ -9,7 +9,7 @@ if (!isset($_SESSION["admin_username"])) {
 $host = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'db1';
+$database = 'database';
 
 $conn = new mysqli($host, $username, $password, $database);
 if ($conn->connect_error) {
