@@ -86,39 +86,5 @@ if (isset($_SESSION['username'])) {
         </ul>
     </nav>
 
-  >
-   
-  <h3>Products:</h3>
-    <div class="products">
-        <?php
-        $host = 'localhost';
-        $username = 'root';
-        $password = '';
-        $database = 'db1';
+  ?>
 
-        $conn = new mysqli($host, $username, $password, $database);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        $sql = "SELECT * FROM products";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo '<div class="product">';
-                echo '<img src="' . $row['photo'] . '" alt="' . $row['name'] . '">';
-                echo '<h4>' . $row['name'] . '</h4>';
-                echo '<p>' . $row['description'] . '</p>';
-                echo '<p>Price: $' . $row['price'] . '</p>';
-                echo '</div>';
-            }
-        } else {
-            echo 'No products available.';
-        }
-
-        $conn->close();
-        ?>
-    </div>
-</body>
-</html>
